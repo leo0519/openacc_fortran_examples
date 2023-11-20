@@ -9,8 +9,8 @@ program gather
 
    ! Initialize MPI
    call MPI_Init(ierr)
-   call MPI_Comm_Rank(MPI_Comm_World, rank, ierr)
-   call MPI_Comm_Size(MPI_Comm_World, size, ierr)
+   call MPI_Comm_rank(MPI_COMM_WORLD, rank, ierr)
+   call MPI_Comm_size(MPI_COMM_WORLD, size, ierr)
 
    do i = 1, steps
       ! Write data
@@ -34,7 +34,7 @@ program gather
          end do
       end if
 
-      call MPI_Barrier(MPI_Comm_World, ierr)
+      call MPI_Barrier(MPI_COMM_WORLD, ierr)
    end do
 
    if (rank .eq. 0) then
