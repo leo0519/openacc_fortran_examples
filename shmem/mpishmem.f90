@@ -39,7 +39,7 @@ program shmem
    else
       winsize = 0_MPI_ADDRESS_KIND
    end if
-   disp = 8
+   disp = sizeof(sendbuf(0))
    call MPI_Win_allocate_shared(winsize, disp, MPI_INFO_NULL, shmcomm, baseptr, win, ierror)
    if (shmrank .ne. root) then
       call MPI_Win_shared_query(win, root, winsize, disp, baseptr, ierror)
