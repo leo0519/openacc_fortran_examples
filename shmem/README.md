@@ -42,7 +42,7 @@ Follow the steps below, you will have
 Elapsed time:    0.1929090 s
 ```
 
-in STD.
+in stdout.
 
 There are 8 processes and each process copies 10,000 double to root process.
 
